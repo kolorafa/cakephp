@@ -317,11 +317,12 @@ class CakeSchema extends CakeObject {
 
 				$fulltable = $db->fullTableName($Object, false, false);
 
-				if (in_array($table, $systemTables)) {
-					$tables[$Object->table] = $this->_columns($Object);
-					$tables[$Object->table]['indexes'] = $db->index($Object);
-					$tables[$Object->table]['tableParameters'] = $db->readTableParameters($fulltable);
-				} elseif ($options['models'] === false) {
+//				if (in_array($table, $systemTables)) {
+//					$tables[$Object->table] = $this->_columns($Object);
+//					$tables[$Object->table]['indexes'] = $db->index($Object);
+//					$tables[$Object->table]['tableParameters'] = $db->readTableParameters($fulltable);
+//				} else
+                                    if ($options['models'] === false) {
 					$tables[$table] = $this->_columns($Object);
 					$tables[$table]['indexes'] = $db->index($Object);
 					$tables[$table]['tableParameters'] = $db->readTableParameters($fulltable);
